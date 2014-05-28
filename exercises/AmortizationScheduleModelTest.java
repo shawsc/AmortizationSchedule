@@ -97,7 +97,7 @@ class AmortizationScheduleModelTest {
         assert false;
     }
     void testGenerateAmortizationSchedule() {
-        System.out.print("Test that when borrowing for 30 years the payments array contains 360 payments.");
+        System.out.print("Test that when borrowing for 30 years the payments array contains 360 payments and there is no balance.");
         Payment[] payments;
         try {
             AmortizationScheduleModel theModel = new AmortizationScheduleModel();
@@ -126,7 +126,7 @@ class AmortizationScheduleModelTest {
         theModel.setAmountBorrowed(new BigDecimal("100000"));
         theModel.setApr(new BigDecimal("5"));
         theModel.setInitialTermMonths(new BigDecimal("360"));
-        if (theModel.calculateMonthlyPayment().setScale(2,BigDecimal.ROUND_HALF_UP).compareTo(new BigDecimal("536.85")) == 0) {
+        if (theModel.calculateMonthlyPayment().setScale(2,BigDecimal.ROUND_HALF_UP).compareTo(new BigDecimal("536.82")) == 0) {
             assert true;
             System.out.print("   Success!\n");
         }

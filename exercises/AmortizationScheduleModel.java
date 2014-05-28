@@ -164,7 +164,7 @@ public class AmortizationScheduleModel {
         //
 
         // calculate J
-        monthlyInterest = apr.divide((new BigDecimal("1200")), 6, RoundingMode.HALF_UP);
+        monthlyInterest = apr.divide((new BigDecimal("1200")), 10, RoundingMode.HALF_UP);
 
         // this is 1 / (1 + J)
         BigDecimal tmp = monthlyInterest.add(BigDecimal.ONE);
